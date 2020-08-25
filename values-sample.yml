@@ -1,0 +1,10 @@
+#@data/values
+---
+azure:
+  environment: AzurePublicCloud
+  resource_group_name: REDACTED
+  subscription_id: REDACTED
+  tenant_id: REDACTED
+  client_id: REDACTED
+  client_secret: REDACTED
+  hosted_zone_name: maki.lol

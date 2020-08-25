@@ -1,0 +1,13 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+- path: vendor
+  contents:
+  - path: github.com/jetstack/cert-manager
+    githubRelease:
+      slug: jetstack/cert-manager
+      tag: v0.16.1
+      disableAutoChecksumValidation: true
+    includePaths:
+    - cert-manager.yaml
+
