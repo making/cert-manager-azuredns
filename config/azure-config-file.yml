@@ -1,0 +1,16 @@
+#@ load("@ytt:data", "data")
+apiVersion: v1
+kind: Secret
+metadata:
+  name: azure-config-file
+  namespace: cert-manager
+stringData:
+  #@yaml/text-templated-strings
+  azure.json: |
+    {
+      "tenantId": "(@= data.values.azure.tenant_id @)",
+      "subscriptionId": "(@= data.values.azure.subscription_id @)",
+      "resourceGroup": "(@= data.values.azure.resource_group_name @)",
+      "aadClientId": "(@= data.values.azure.client_id @)",
+      "aadClientSecret": "(@= data.values.azure.client_secret @)"
+    }
