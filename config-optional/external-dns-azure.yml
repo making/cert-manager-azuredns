@@ -36,18 +36,18 @@ subjects:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: external-dns
+  name: external-dns-azure
   namespace: cert-manager
 spec:
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: external-dns
+      app: external-dns-azure
   template:
     metadata:
       labels:
-        app: external-dns
+        app: external-dns-azure
     spec:
       serviceAccountName: external-dns
       containers:
